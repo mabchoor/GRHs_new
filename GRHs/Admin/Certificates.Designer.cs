@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.addEmployee_addBtn = new System.Windows.Forms.Button();
             this.StartTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.addEmployee_position = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.addEmployee_Departement = new System.Windows.Forms.ComboBox();
             this.addEmployee_fullName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.addEmployee_id = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.DaysNumber = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.salary_clearBtn = new System.Windows.Forms.Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.ComboBox_Positions = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ComboBox_Departements = new Guna.UI2.WinForms.Guna2ComboBox();
             this.rechercher = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmployeeView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.phone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.positiontxt = new System.Windows.Forms.TextBox();
+            this.departementtxt = new System.Windows.Forms.TextBox();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeView)).BeginInit();
@@ -58,16 +58,16 @@
             // 
             // guna2GroupBox2
             // 
+            this.guna2GroupBox2.Controls.Add(this.departementtxt);
+            this.guna2GroupBox2.Controls.Add(this.positiontxt);
+            this.guna2GroupBox2.Controls.Add(this.phone);
+            this.guna2GroupBox2.Controls.Add(this.label5);
             this.guna2GroupBox2.Controls.Add(this.salary_clearBtn);
-            this.guna2GroupBox2.Controls.Add(this.DaysNumber);
-            this.guna2GroupBox2.Controls.Add(this.label1);
             this.guna2GroupBox2.Controls.Add(this.addEmployee_addBtn);
             this.guna2GroupBox2.Controls.Add(this.StartTime);
             this.guna2GroupBox2.Controls.Add(this.label6);
-            this.guna2GroupBox2.Controls.Add(this.addEmployee_position);
             this.guna2GroupBox2.Controls.Add(this.label8);
             this.guna2GroupBox2.Controls.Add(this.label4);
-            this.guna2GroupBox2.Controls.Add(this.addEmployee_Departement);
             this.guna2GroupBox2.Controls.Add(this.addEmployee_fullName);
             this.guna2GroupBox2.Controls.Add(this.label3);
             this.guna2GroupBox2.Controls.Add(this.addEmployee_id);
@@ -91,12 +91,13 @@
             this.addEmployee_addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addEmployee_addBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEmployee_addBtn.ForeColor = System.Drawing.Color.White;
-            this.addEmployee_addBtn.Location = new System.Drawing.Point(41, 369);
+            this.addEmployee_addBtn.Location = new System.Drawing.Point(39, 382);
             this.addEmployee_addBtn.Name = "addEmployee_addBtn";
             this.addEmployee_addBtn.Size = new System.Drawing.Size(113, 37);
             this.addEmployee_addBtn.TabIndex = 31;
             this.addEmployee_addBtn.Text = "Add";
             this.addEmployee_addBtn.UseVisualStyleBackColor = false;
+            this.addEmployee_addBtn.Click += new System.EventHandler(this.addEmployee_addBtn_Click);
             // 
             // StartTime
             // 
@@ -104,7 +105,7 @@
             this.StartTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
             this.StartTime.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.StartTime.Location = new System.Drawing.Point(135, 292);
+            this.StartTime.Location = new System.Drawing.Point(133, 305);
             this.StartTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.StartTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.StartTime.Name = "StartTime";
@@ -116,26 +117,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(34, 202);
+            this.label6.Location = new System.Drawing.Point(32, 251);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 15);
             this.label6.TabIndex = 10;
             this.label6.Text = "Position:";
             // 
-            // addEmployee_position
-            // 
-            this.addEmployee_position.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEmployee_position.FormattingEnabled = true;
-            this.addEmployee_position.Location = new System.Drawing.Point(137, 199);
-            this.addEmployee_position.Name = "addEmployee_position";
-            this.addEmployee_position.Size = new System.Drawing.Size(170, 23);
-            this.addEmployee_position.TabIndex = 11;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(34, 303);
+            this.label8.Location = new System.Drawing.Point(32, 316);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(66, 15);
             this.label8.TabIndex = 24;
@@ -145,27 +137,15 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 158);
+            this.label4.Location = new System.Drawing.Point(36, 194);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "Department:";
             // 
-            // addEmployee_Departement
-            // 
-            this.addEmployee_Departement.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEmployee_Departement.FormattingEnabled = true;
-            this.addEmployee_Departement.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Others"});
-            this.addEmployee_Departement.Location = new System.Drawing.Point(135, 158);
-            this.addEmployee_Departement.Name = "addEmployee_Departement";
-            this.addEmployee_Departement.Size = new System.Drawing.Size(170, 23);
-            this.addEmployee_Departement.TabIndex = 7;
-            // 
             // addEmployee_fullName
             // 
+            this.addEmployee_fullName.Enabled = false;
             this.addEmployee_fullName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEmployee_fullName.Location = new System.Drawing.Point(137, 118);
             this.addEmployee_fullName.Name = "addEmployee_fullName";
@@ -184,6 +164,7 @@
             // 
             // addEmployee_id
             // 
+            this.addEmployee_id.Enabled = false;
             this.addEmployee_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addEmployee_id.Location = new System.Drawing.Point(137, 78);
             this.addEmployee_id.Name = "addEmployee_id";
@@ -200,24 +181,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "CIN:";
             // 
-            // DaysNumber
-            // 
-            this.DaysNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DaysNumber.Location = new System.Drawing.Point(137, 244);
-            this.DaysNumber.Name = "DaysNumber";
-            this.DaysNumber.Size = new System.Drawing.Size(152, 21);
-            this.DaysNumber.TabIndex = 33;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 244);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Full Name:";
-            // 
             // salary_clearBtn
             // 
             this.salary_clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
@@ -229,12 +192,13 @@
             this.salary_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salary_clearBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salary_clearBtn.ForeColor = System.Drawing.Color.White;
-            this.salary_clearBtn.Location = new System.Drawing.Point(193, 369);
+            this.salary_clearBtn.Location = new System.Drawing.Point(191, 382);
             this.salary_clearBtn.Name = "salary_clearBtn";
             this.salary_clearBtn.Size = new System.Drawing.Size(96, 37);
             this.salary_clearBtn.TabIndex = 34;
             this.salary_clearBtn.Text = "Clear";
             this.salary_clearBtn.UseVisualStyleBackColor = false;
+            this.salary_clearBtn.Click += new System.EventHandler(this.salary_clearBtn_Click);
             // 
             // guna2GroupBox1
             // 
@@ -306,33 +270,33 @@
             // 
             this.EmployeeView.AllowUserToAddRows = false;
             this.EmployeeView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.EmployeeView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.EmployeeView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.EmployeeView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.EmployeeView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.EmployeeView.ColumnHeadersHeight = 15;
             this.EmployeeView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.EmployeeView.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.EmployeeView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.EmployeeView.DefaultCellStyle = dataGridViewCellStyle9;
             this.EmployeeView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.EmployeeView.Location = new System.Drawing.Point(24, 99);
             this.EmployeeView.Name = "EmployeeView";
             this.EmployeeView.ReadOnly = true;
             this.EmployeeView.RowHeadersVisible = false;
-            this.EmployeeView.Size = new System.Drawing.Size(408, 385);
+            this.EmployeeView.Size = new System.Drawing.Size(408, 356);
             this.EmployeeView.TabIndex = 39;
             this.EmployeeView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.EmployeeView.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -355,6 +319,42 @@
             this.EmployeeView.ThemeStyle.RowsStyle.Height = 22;
             this.EmployeeView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.EmployeeView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.EmployeeView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeeView_CellContentClick);
+            this.EmployeeView.SelectionChanged += new System.EventHandler(this.EmployeeView_SelectionChanged);
+            // 
+            // phone
+            // 
+            this.phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone.Location = new System.Drawing.Point(137, 154);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(152, 21);
+            this.phone.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(22, 154);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 15);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Full Name:";
+            // 
+            // positiontxt
+            // 
+            this.positiontxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positiontxt.Location = new System.Drawing.Point(137, 245);
+            this.positiontxt.Name = "positiontxt";
+            this.positiontxt.Size = new System.Drawing.Size(152, 21);
+            this.positiontxt.TabIndex = 37;
+            // 
+            // departementtxt
+            // 
+            this.departementtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departementtxt.Location = new System.Drawing.Point(137, 194);
+            this.departementtxt.Name = "departementtxt";
+            this.departementtxt.Size = new System.Drawing.Size(152, 21);
+            this.departementtxt.TabIndex = 38;
             // 
             // Certificates
             // 
@@ -379,21 +379,21 @@
         private System.Windows.Forms.Button addEmployee_addBtn;
         private Guna.UI2.WinForms.Guna2DateTimePicker StartTime;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox addEmployee_position;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox addEmployee_Departement;
         private System.Windows.Forms.TextBox addEmployee_fullName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox addEmployee_id;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox DaysNumber;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button salary_clearBtn;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBox_Positions;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBox_Departements;
         private Guna.UI2.WinForms.Guna2TextBox rechercher;
         private Guna.UI2.WinForms.Guna2DataGridView EmployeeView;
+        private System.Windows.Forms.TextBox phone;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox departementtxt;
+        private System.Windows.Forms.TextBox positiontxt;
     }
 }

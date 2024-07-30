@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GRHs.Data.UserSession;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -42,6 +43,11 @@ namespace GRHs.Admin
         private void salary_btn_Click(object sender, EventArgs e)
         {
             AddUserControl(new Certificates());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddUserControl(new Leaves());
         }
     }
 }

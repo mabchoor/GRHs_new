@@ -43,7 +43,8 @@ namespace GRHs.Entities
         Annual,
         Sick,
         Personal,
-        Unpaid
+        Unpaid,
+        other
     }
 
     // Enumeration for Leave Status

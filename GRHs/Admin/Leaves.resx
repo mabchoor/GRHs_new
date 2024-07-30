@@ -117,38 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8_employee_card_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_employee_card_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_commercial_development_management_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_commercial_development_management_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_dashboard_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_dashboard_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_employee_card_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_employee_card_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_employee_card_60px_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_employee_card_60px_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_group_background_selected_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_group_background_selected_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_group_background_selected_filled_60px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_group_background_selected_filled_60px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_logout_rounded_up_filled_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_logout_rounded_up_filled_25px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_Salary_male_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\icons8_Salary_male_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ATTESTATION_DE_TRAVAIL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ATTESTATION-DE-TRAVAIL.docx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="temp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\temp.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="guna2ColorTransition1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>175, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>

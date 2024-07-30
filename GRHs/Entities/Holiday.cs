@@ -10,6 +10,7 @@ namespace GRHs.Entities
     {
         public int HolidayID { get; set; }
         public string Name { get; set; }
+        public int Daysnumber { get; set; }
         public DateTime Date { get; set; }
         public ICollection<CalendarHoliday> CalendarHolidays { get; set; }
     }

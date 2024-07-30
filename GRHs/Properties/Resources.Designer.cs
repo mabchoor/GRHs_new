@@ -61,6 +61,16 @@ namespace GRHs.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ATTESTATION_DE_TRAVAIL {
+            get {
+                object obj = ResourceManager.GetObject("ATTESTATION_DE_TRAVAIL", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap icons8_commercial_development_management_60px {
@@ -146,6 +156,16 @@ namespace GRHs.Properties {
         internal static System.Drawing.Bitmap icons8_Salary_male_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_Salary_male_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap temp {
+            get {
+                object obj = ResourceManager.GetObject("temp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

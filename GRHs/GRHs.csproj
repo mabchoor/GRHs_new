@@ -150,6 +150,10 @@
     <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.5.0\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.SqlServer.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Server.1.0.0\lib\net46\Microsoft.SqlServer.Server.dll</HintPath>
     </Reference>
@@ -264,6 +268,12 @@
     <Compile Include="Admin\Add-Employee.Designer.cs">
       <DependentUpon>Add-Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Addleave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Addleave.Designer.cs">
+      <DependentUpon>Addleave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\AdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +303,13 @@
     </Compile>
     <Compile Include="Admin\Attestaions.Designer.cs">
       <DependentUpon>Attestaions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\GenerateCertification.cs" />
+    <Compile Include="Admin\Leaves.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Admin\Leaves.Designer.cs">
+      <DependentUpon>Leaves.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\Update-employee.cs">
       <SubType>Form</SubType>
@@ -359,6 +376,10 @@
     <Compile Include="Data\UserSession\20240729045401_userupdate.Designer.cs">
       <DependentUpon>20240729045401_userupdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Data\UserSession\20240730015354_updatleave.cs" />
+    <Compile Include="Data\UserSession\20240730015354_updatleave.Designer.cs">
+      <DependentUpon>20240730015354_updatleave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\UserSession\EmployeeManagementDbContextModelSnapshot.cs" />
     <Compile Include="DI\DbContextProvider.cs" />
     <Compile Include="Entities\Admins.cs" />
@@ -381,6 +402,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="User\UserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -389,6 +415,9 @@
     </Compile>
     <EmbeddedResource Include="Admin\Add-Employee.resx">
       <DependentUpon>Add-Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Addleave.resx">
+      <DependentUpon>Addleave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminDashboard.resx">
       <DependentUpon>AdminDashboard.cs</DependentUpon>
@@ -405,6 +434,9 @@
     <EmbeddedResource Include="Admin\Employees.resx">
       <DependentUpon>Employees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Leaves.resx">
+      <DependentUpon>Leaves.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Update-employee.resx">
       <DependentUpon>Update-employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -419,14 +451,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <None Include="Assets\temp.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -437,6 +465,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\ATTESTATION-DE-TRAVAIL.docx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -479,6 +508,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\icons8_Salary_male_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\temp.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

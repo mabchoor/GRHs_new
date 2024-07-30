@@ -1,4 +1,6 @@
-﻿using GRHs.authentication;
+﻿using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.ExtendedProperties;
+using GRHs.authentication;
 using GRHs.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace GRHs.Admin
 {
@@ -25,7 +28,7 @@ namespace GRHs.Admin
 
         private void Certificates_Load(object sender, EventArgs e)
         {
-
+            ApplyFilters();
         }
         private void ApplyFilters()
         {
@@ -34,10 +37,19 @@ namespace GRHs.Admin
                 // Get the search text
                 string searchText = rechercher.Text.Trim().ToLower();
 
-                // Get selected values from ComboBoxes
-                int selectedDepartmentID = (int)ComboBox_Departements.SelectedValue;
-                int selectedPositionID = (int)ComboBox_Positions.SelectedValue;
-              
+                // Get selected values from ComboBoxes safely
+                int selectedDepartmentID = -1;
+                int selectedPositionID = -1;
+
+                if (ComboBox_Departements.SelectedValue != null)
+                {
+                    int.TryParse(ComboBox_Departements.SelectedValue.ToString(), out selectedDepartmentID);
+                }
+
+                if (ComboBox_Positions.SelectedValue != null)
+                {
+                    int.TryParse(ComboBox_Positions.SelectedValue.ToString(), out selectedPositionID);
+                }
 
                 // Fetch all employees including related entities
                 var employees = _userAccount.DbContext.Employees
@@ -46,7 +58,7 @@ namespace GRHs.Admin
                     .Include(emp => emp.Department)  // Eager load Department details
                     .ToList();
 
-                // Filter employees based on search text, department, position, and leave status
+                // Filter employees based on search text, department, and position
                 var filteredEmployees = employees.Where(employee =>
                     (string.IsNullOrEmpty(searchText) ||
                      (employee.User?.Name ?? "").ToLower().Contains(searchText) ||
@@ -66,9 +78,7 @@ namespace GRHs.Admin
                 dataTable.Columns.Add("Department", typeof(string)); // Column header title
                 dataTable.Columns.Add("CIN", typeof(string)); // Column header title
                 dataTable.Columns.Add("Phone Number", typeof(string)); // Column header title
-               
-               
-               
+                dataTable.Columns.Add("Start Date", typeof(DateTime)); // Column header title
 
                 // Populate the DataTable
                 foreach (var employee in filteredEmployees)
@@ -80,6 +90,7 @@ namespace GRHs.Admin
                     var cin = employee.CIN ?? "N/A"; // Handle null CIN
                     var phoneNumber = employee.EmployeeNumber ?? "N/A"; // Handle null PhoneNumber
 
+
                     dataTable.Rows.Add(
                         employee.EmployeeID,
                         employeeName,
@@ -87,10 +98,7 @@ namespace GRHs.Admin
                         departmentName,
                         cin,
                         phoneNumber,
-                        _userAccount.DbContext.Leaves
-                            .Any(l => l.EmployeeID == employee.EmployeeID && l.StartDate <= DateTime.Now && l.EndDate >= DateTime.Now)
-                            ? "Yes"
-                            : "No"
+                        employee.StartDate
                     );
                 }
 
@@ -99,9 +107,11 @@ namespace GRHs.Admin
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while applying filters: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred while applying filters: {ex.Message}\n{ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
 
         private void LoadComboBoxes()
@@ -117,6 +127,7 @@ namespace GRHs.Admin
                     })
                     .ToList();
 
+                // Add "All" option
                 departments.Insert(0, new Departement { DepartementID = -1, DepartementName = "All" });
 
                 var departmentBindingSource = new BindingSource();
@@ -124,6 +135,7 @@ namespace GRHs.Admin
                 ComboBox_Departements.DataSource = departmentBindingSource;
                 ComboBox_Departements.DisplayMember = "DepartementName";
                 ComboBox_Departements.ValueMember = "DepartementID";
+
 
                 // Load positions
                 var positions = _userAccount.DbContext.Positions
@@ -134,6 +146,7 @@ namespace GRHs.Admin
                     })
                     .ToList();
 
+                // Add "All" option
                 positions.Insert(0, new Position { PositionID = -1, PositionName = "All" });
 
                 var positionBindingSource = new BindingSource();
@@ -142,15 +155,15 @@ namespace GRHs.Admin
                 ComboBox_Positions.DisplayMember = "PositionName";
                 ComboBox_Positions.ValueMember = "PositionID";
 
-                
-
-             
+            
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred while loading departments or positions: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
         private void ComboBox_Departements_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -165,6 +178,166 @@ namespace GRHs.Admin
         private void ComboBox_Positions_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyFilters();
+        }
+
+        private void EmployeeView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void EmployeeView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (EmployeeView.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = EmployeeView.SelectedRows[0];
+
+                // Extract the data from the selected row
+                int employeeID = (int)selectedRow.Cells["Employee ID"].Value;
+                string name = (string)selectedRow.Cells["Name"].Value;
+                string position = (string)selectedRow.Cells["Position"].Value;
+                string department = (string)selectedRow.Cells["Department"].Value;
+                string cin = (string)selectedRow.Cells["CIN"].Value;
+                string phoneNumber = (string)selectedRow.Cells["Phone Number"].Value;
+                string date = (string)selectedRow.Cells["Start Date"].Value.ToString();
+                StartTime.Value = DateTime.Parse(date);
+                // Populate the text boxes and combo boxes
+                addEmployee_fullName.Text = name;
+                addEmployee_id.Text = cin;
+                phone.Text = phoneNumber;
+
+                // Set the combo box selections
+                departementtxt.Text = department;
+
+                positiontxt.Text = position;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (EmployeeView.SelectedRows.Count > 0)
+            {
+                // Get the selected row
+                DataGridViewRow selectedRow = EmployeeView.SelectedRows[0];
+
+                // Extract the data from the selected row
+                int employeeID = (int)selectedRow.Cells["Employee ID"].Value;
+                string name = (string)selectedRow.Cells["Name"].Value;
+                string position = (string)selectedRow.Cells["Position"].Value;
+                string department = (string)selectedRow.Cells["Department"].Value;
+                string cin = (string)selectedRow.Cells["CIN"].Value;
+                string phoneNumber = (string)selectedRow.Cells["Phone Number"].Value;
+
+                // Populate the text boxes and combo boxes
+                addEmployee_fullName.Text = name;
+                addEmployee_id.Text = cin;
+                phone.Text = phoneNumber;
+
+                // Set the combo box selections
+                departementtxt.Text = department;
+
+                positiontxt.Text = position;
+            }
+        }
+
+        private void salary_clearBtn_Click(object sender, EventArgs e)
+        {
+
+            addEmployee_fullName.Text = "";
+            addEmployee_id.Text = "";
+            phone.Text = "";
+
+            StartTime.Value = DateTime.Now;
+            departementtxt.Text = "";
+
+            positiontxt.Text = "";
+        }
+
+        private void addEmployee_addBtn_Click(object sender, EventArgs e)
+        {
+            int employeeID = GetSelectedEmployeeID(); // Method to get the selected employee ID
+            if (employeeID == -1)
+            {
+                MessageBox.Show("Please select an employee.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            bool isGenerated = GenerateAttestation();
+            if (isGenerated)
+            {
+                InsertAttestation(employeeID);
+            }
+
+        }
+
+        private bool GenerateAttestation()
+        {
+            try
+            {
+                string[] wordsToReplace = { "<name>", "<cin>", "<posistion>", "<starttime>", "<date>" };
+                string[] newValues =
+                {
+            addEmployee_fullName.Text ?? string.Empty,
+            addEmployee_id.Text ?? string.Empty,
+            positiontxt.Text ?? string.Empty,
+            StartTime.Text ?? string.Empty,
+            DateTime.Now.ToString("yyyy-MM-dd") // Format DateTime to a string
+        };
+
+                var generator = new GenerateCertification(wordsToReplace, newValues, addEmployee_id.Text);
+                generator.ReplaceWordsInWordFile();
+                return true; // Return true if generation is successful
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating attestation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        private void InsertAttestation(int employeeID)
+        {
+            try
+            {
+                var employee = _userAccount.DbContext.Employees
+                    .Include(e => e.User)
+                    .Include(e => e.Position)
+                    .Include(e => e.Department)
+                    .FirstOrDefault(e => e.EmployeeID == employeeID);
+
+                if (employee == null)
+                {
+                    MessageBox.Show("Employee not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                var attestation = new Attestation
+                {
+                    EmployeeID = employee.EmployeeID,
+                    RequestDate = DateTime.Now,
+                    Status = "Validated", // Assuming attestation is validated
+                    IssueDate = DateTime.Now
+                };
+
+                // Insert the attestation into the database
+                _userAccount.DbContext.Attestations.Add(attestation);
+                _userAccount.DbContext.SaveChanges();
+
+                MessageBox.Show("Attestation generated and inserted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while inserting the attestation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int GetSelectedEmployeeID()
+        {
+            if (EmployeeView.SelectedRows.Count > 0)
+            {
+                return (int)EmployeeView.SelectedRows[0].Cells["Employee ID"].Value;
+            }
+            return -1;
         }
     }
 

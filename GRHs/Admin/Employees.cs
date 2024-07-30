@@ -33,8 +33,6 @@ namespace GRHs.Admin
             rechercher.TextChanged += new EventHandler(rechercher_TextChanged);
             LoadEmployeeData();
          
-          
-
         }
         public void LoadEmployeeData()
         {
@@ -235,9 +233,20 @@ namespace GRHs.Admin
                 // Get the search text
                 string searchText = rechercher.Text.Trim().ToLower();
 
-                // Get selected values from ComboBoxes
-                int selectedDepartmentID = (int)ComboBox_Departements.SelectedValue;
-                int selectedPositionID = (int)ComboBox_Positions.SelectedValue;
+                // Get selected values from ComboBoxes safely
+                int selectedDepartmentID = -1;
+                int selectedPositionID = -1;
+
+                if (ComboBox_Departements.SelectedValue != null)
+                {
+                    int.TryParse(ComboBox_Departements.SelectedValue.ToString(), out selectedDepartmentID);
+                }
+
+                if (ComboBox_Positions.SelectedValue != null)
+                {
+                    int.TryParse(ComboBox_Positions.SelectedValue.ToString(), out selectedPositionID);
+                }
+
                 string onLeaveFilter = (ComboBox_onleave.SelectedItem as LeaveOption)?.Value; // Using LeaveOption value
 
                 // Fetch all employees including related entities
