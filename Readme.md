@@ -51,9 +51,11 @@ Ensure you have the following software installed:
     ```
 
     - Run the database migrations to set up the database schema.
+   
 
     ```bash
-    dotnet ef database update
+    Add-migration Migration-name
+    Update-database 
     ```
 
 3. **Run the application**
