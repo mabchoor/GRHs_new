@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Add_days = new Guna.UI2.WinForms.Guna2TextBox();
+            this.Add_date = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Add_name = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rechercher = new Guna.UI2.WinForms.Guna2TextBox();
+            this.HolidaysView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.daysNumberup = new Guna.UI2.WinForms.Guna2TextBox();
+            this.nameup = new Guna.UI2.WinForms.Guna2TextBox();
             this.datestart = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.addEmployee_clearBtn = new System.Windows.Forms.Button();
             this.addEmployee_deleteBtn = new System.Windows.Forms.Button();
             this.addEmployee_updateBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.nameup = new Guna.UI2.WinForms.Guna2TextBox();
-            this.daysNumberup = new Guna.UI2.WinForms.Guna2TextBox();
-            this.HolidaysView = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.rechercher = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Add_days = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Add_name = new Guna.UI2.WinForms.Guna2TextBox();
-            this.Add_date = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
-            this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HolidaysView)).BeginInit();
+            this.guna2GroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -72,7 +72,109 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(300, 287);
             this.guna2GroupBox1.TabIndex = 0;
-            this.guna2GroupBox1.Text = "guna2GroupBox1";
+            this.guna2GroupBox1.Text = "Add new holiday";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(149, 243);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 24);
+            this.button1.TabIndex = 71;
+            this.button1.Text = "Create";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 15);
+            this.label3.TabIndex = 70;
+            this.label3.Text = "Start Date:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 127);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.TabIndex = 69;
+            this.label2.Text = "Start Date:";
+            // 
+            // Add_days
+            // 
+            this.Add_days.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Add_days.DefaultText = "";
+            this.Add_days.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Add_days.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Add_days.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_days.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_days.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_days.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Add_days.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_days.Location = new System.Drawing.Point(102, 115);
+            this.Add_days.Name = "Add_days";
+            this.Add_days.PasswordChar = '\0';
+            this.Add_days.PlaceholderText = "Days Number : 0,1...";
+            this.Add_days.SelectedText = "";
+            this.Add_days.Size = new System.Drawing.Size(127, 36);
+            this.Add_days.TabIndex = 68;
+            // 
+            // Add_date
+            // 
+            this.Add_date.BackColor = System.Drawing.Color.White;
+            this.Add_date.Checked = true;
+            this.Add_date.FillColor = System.Drawing.Color.White;
+            this.Add_date.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Add_date.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.Add_date.Location = new System.Drawing.Point(93, 171);
+            this.Add_date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.Add_date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.Add_date.Name = "Add_date";
+            this.Add_date.Size = new System.Drawing.Size(156, 36);
+            this.Add_date.TabIndex = 66;
+            this.Add_date.Value = new System.DateTime(2024, 7, 29, 6, 12, 45, 306);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.TabIndex = 65;
+            this.label1.Text = "Start Date:";
+            // 
+            // Add_name
+            // 
+            this.Add_name.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Add_name.DefaultText = "";
+            this.Add_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.Add_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Add_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.Add_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_name.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Add_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.Add_name.Location = new System.Drawing.Point(102, 59);
+            this.Add_name.Name = "Add_name";
+            this.Add_name.PasswordChar = '\0';
+            this.Add_name.PlaceholderText = "Libele :";
+            this.Add_name.SelectedText = "";
+            this.Add_name.Size = new System.Drawing.Size(160, 36);
+            this.Add_name.TabIndex = 67;
             // 
             // guna2GroupBox2
             // 
@@ -84,7 +186,82 @@
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(507, 287);
             this.guna2GroupBox2.TabIndex = 1;
-            this.guna2GroupBox2.Text = "guna2GroupBox2";
+            this.guna2GroupBox2.Text = "Holidays ";
+            // 
+            // rechercher
+            // 
+            this.rechercher.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.rechercher.DefaultText = "";
+            this.rechercher.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.rechercher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.rechercher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.rechercher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.rechercher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rechercher.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.rechercher.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rechercher.Location = new System.Drawing.Point(348, 46);
+            this.rechercher.Name = "rechercher";
+            this.rechercher.PasswordChar = '\0';
+            this.rechercher.PlaceholderText = "Rechercher";
+            this.rechercher.SelectedText = "";
+            this.rechercher.Size = new System.Drawing.Size(124, 24);
+            this.rechercher.TabIndex = 41;
+            // 
+            // HolidaysView
+            // 
+            this.HolidaysView.AllowUserToAddRows = false;
+            this.HolidaysView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.HolidaysView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.HolidaysView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.HolidaysView.ColumnHeadersHeight = 15;
+            this.HolidaysView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.HolidaysView.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.HolidaysView.DefaultCellStyle = dataGridViewCellStyle6;
+            this.HolidaysView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.HolidaysView.Location = new System.Drawing.Point(30, 76);
+            this.HolidaysView.Name = "HolidaysView";
+            this.HolidaysView.ReadOnly = true;
+            this.HolidaysView.RowHeadersVisible = false;
+            this.HolidaysView.Size = new System.Drawing.Size(442, 191);
+            this.HolidaysView.TabIndex = 40;
+            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.HolidaysView.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.HolidaysView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.HolidaysView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.HolidaysView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.HolidaysView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HolidaysView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.HolidaysView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.HolidaysView.ThemeStyle.HeaderStyle.Height = 15;
+            this.HolidaysView.ThemeStyle.ReadOnly = true;
+            this.HolidaysView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.HolidaysView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.HolidaysView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HolidaysView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.HolidaysView.ThemeStyle.RowsStyle.Height = 22;
+            this.HolidaysView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.HolidaysView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.HolidaysView.SelectionChanged += new System.EventHandler(this.HolidaysView_SelectionChanged);
+            this.HolidaysView.SizeChanged += new System.EventHandler(this.HolidaysView_SizeChanged);
             // 
             // guna2GroupBox3
             // 
@@ -102,7 +279,45 @@
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(695, 216);
             this.guna2GroupBox3.TabIndex = 2;
-            this.guna2GroupBox3.Text = "guna2GroupBox3";
+            this.guna2GroupBox3.Text = "Update holiday";
+            // 
+            // daysNumberup
+            // 
+            this.daysNumberup.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.daysNumberup.DefaultText = "";
+            this.daysNumberup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.daysNumberup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.daysNumberup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.daysNumberup.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.daysNumberup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.daysNumberup.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.daysNumberup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.daysNumberup.Location = new System.Drawing.Point(514, 66);
+            this.daysNumberup.Name = "daysNumberup";
+            this.daysNumberup.PasswordChar = '\0';
+            this.daysNumberup.PlaceholderText = "Days Number : 0,1...";
+            this.daysNumberup.SelectedText = "";
+            this.daysNumberup.Size = new System.Drawing.Size(127, 36);
+            this.daysNumberup.TabIndex = 64;
+            // 
+            // nameup
+            // 
+            this.nameup.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nameup.DefaultText = "";
+            this.nameup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.nameup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.nameup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.nameup.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.nameup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nameup.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nameup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.nameup.Location = new System.Drawing.Point(290, 66);
+            this.nameup.Name = "nameup";
+            this.nameup.PasswordChar = '\0';
+            this.nameup.PlaceholderText = "Libele :";
+            this.nameup.SelectedText = "";
+            this.nameup.Size = new System.Drawing.Size(208, 36);
+            this.nameup.TabIndex = 63;
             // 
             // datestart
             // 
@@ -205,221 +420,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // nameup
-            // 
-            this.nameup.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nameup.DefaultText = "";
-            this.nameup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.nameup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.nameup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.nameup.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.nameup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.nameup.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nameup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.nameup.Location = new System.Drawing.Point(290, 66);
-            this.nameup.Name = "nameup";
-            this.nameup.PasswordChar = '\0';
-            this.nameup.PlaceholderText = "Libele :";
-            this.nameup.SelectedText = "";
-            this.nameup.Size = new System.Drawing.Size(208, 36);
-            this.nameup.TabIndex = 63;
-            // 
-            // daysNumberup
-            // 
-            this.daysNumberup.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.daysNumberup.DefaultText = "";
-            this.daysNumberup.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.daysNumberup.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.daysNumberup.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.daysNumberup.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.daysNumberup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.daysNumberup.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.daysNumberup.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.daysNumberup.Location = new System.Drawing.Point(514, 66);
-            this.daysNumberup.Name = "daysNumberup";
-            this.daysNumberup.PasswordChar = '\0';
-            this.daysNumberup.PlaceholderText = "Days Number : 0,1...";
-            this.daysNumberup.SelectedText = "";
-            this.daysNumberup.Size = new System.Drawing.Size(127, 36);
-            this.daysNumberup.TabIndex = 64;
-            // 
-            // HolidaysView
-            // 
-            this.HolidaysView.AllowUserToAddRows = false;
-            this.HolidaysView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.HolidaysView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.HolidaysView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.HolidaysView.ColumnHeadersHeight = 15;
-            this.HolidaysView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.HolidaysView.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.HolidaysView.DefaultCellStyle = dataGridViewCellStyle12;
-            this.HolidaysView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.HolidaysView.Location = new System.Drawing.Point(30, 76);
-            this.HolidaysView.Name = "HolidaysView";
-            this.HolidaysView.ReadOnly = true;
-            this.HolidaysView.RowHeadersVisible = false;
-            this.HolidaysView.Size = new System.Drawing.Size(442, 191);
-            this.HolidaysView.TabIndex = 40;
-            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.HolidaysView.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.HolidaysView.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.HolidaysView.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.HolidaysView.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.HolidaysView.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.HolidaysView.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HolidaysView.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.HolidaysView.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.HolidaysView.ThemeStyle.HeaderStyle.Height = 15;
-            this.HolidaysView.ThemeStyle.ReadOnly = true;
-            this.HolidaysView.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.HolidaysView.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.HolidaysView.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HolidaysView.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.HolidaysView.ThemeStyle.RowsStyle.Height = 22;
-            this.HolidaysView.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.HolidaysView.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.HolidaysView.SelectionChanged += new System.EventHandler(this.HolidaysView_SelectionChanged);
-            this.HolidaysView.SizeChanged += new System.EventHandler(this.HolidaysView_SizeChanged);
-            // 
-            // rechercher
-            // 
-            this.rechercher.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.rechercher.DefaultText = "";
-            this.rechercher.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.rechercher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.rechercher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.rechercher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.rechercher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rechercher.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.rechercher.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rechercher.Location = new System.Drawing.Point(348, 46);
-            this.rechercher.Name = "rechercher";
-            this.rechercher.PasswordChar = '\0';
-            this.rechercher.PlaceholderText = "Rechercher";
-            this.rechercher.SelectedText = "";
-            this.rechercher.Size = new System.Drawing.Size(124, 24);
-            this.rechercher.TabIndex = 41;
-            // 
-            // Add_days
-            // 
-            this.Add_days.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Add_days.DefaultText = "";
-            this.Add_days.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Add_days.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Add_days.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_days.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_days.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_days.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Add_days.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_days.Location = new System.Drawing.Point(102, 115);
-            this.Add_days.Name = "Add_days";
-            this.Add_days.PasswordChar = '\0';
-            this.Add_days.PlaceholderText = "Days Number : 0,1...";
-            this.Add_days.SelectedText = "";
-            this.Add_days.Size = new System.Drawing.Size(127, 36);
-            this.Add_days.TabIndex = 68;
-            // 
-            // Add_name
-            // 
-            this.Add_name.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Add_name.DefaultText = "";
-            this.Add_name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.Add_name.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.Add_name.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_name.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.Add_name.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_name.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Add_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.Add_name.Location = new System.Drawing.Point(102, 59);
-            this.Add_name.Name = "Add_name";
-            this.Add_name.PasswordChar = '\0';
-            this.Add_name.PlaceholderText = "Libele :";
-            this.Add_name.SelectedText = "";
-            this.Add_name.Size = new System.Drawing.Size(160, 36);
-            this.Add_name.TabIndex = 67;
-            // 
-            // Add_date
-            // 
-            this.Add_date.BackColor = System.Drawing.Color.White;
-            this.Add_date.Checked = true;
-            this.Add_date.FillColor = System.Drawing.Color.White;
-            this.Add_date.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Add_date.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.Add_date.Location = new System.Drawing.Point(93, 171);
-            this.Add_date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.Add_date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.Add_date.Name = "Add_date";
-            this.Add_date.Size = new System.Drawing.Size(156, 36);
-            this.Add_date.TabIndex = 66;
-            this.Add_date.Value = new System.DateTime(2024, 7, 29, 6, 12, 45, 306);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 181);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
-            this.label1.TabIndex = 65;
-            this.label1.Text = "Start Date:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 127);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
-            this.label2.TabIndex = 69;
-            this.label2.Text = "Start Date:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(14, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
-            this.label3.TabIndex = 70;
-            this.label3.Text = "Start Date:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(149, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 24);
-            this.button1.TabIndex = 71;
-            this.button1.Text = "Create";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Holidays
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -433,9 +433,9 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.guna2GroupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.HolidaysView)).EndInit();
             this.guna2GroupBox3.ResumeLayout(false);
             this.guna2GroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HolidaysView)).EndInit();
             this.ResumeLayout(false);
 
         }

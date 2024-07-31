@@ -81,5 +81,10 @@ namespace GRHs.Admin
             var login = new GRHs.authentication.login();
             login.Show();
         }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

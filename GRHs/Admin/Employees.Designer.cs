@@ -63,7 +63,7 @@
             this.addEmployee_clearBtn.Name = "addEmployee_clearBtn";
             this.addEmployee_clearBtn.Size = new System.Drawing.Size(113, 37);
             this.addEmployee_clearBtn.TabIndex = 17;
-            this.addEmployee_clearBtn.Text = "Print";
+            this.addEmployee_clearBtn.Text = "Export";
             this.addEmployee_clearBtn.UseVisualStyleBackColor = false;
             this.addEmployee_clearBtn.Click += new System.EventHandler(this.addEmployee_clearBtn_Click);
             // 
@@ -221,7 +221,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
             this.button1.TabIndex = 18;
-            this.button1.Text = "Update";
+            this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

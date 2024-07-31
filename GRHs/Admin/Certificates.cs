@@ -204,7 +204,7 @@ namespace GRHs.Admin
                 StartTime.Value = DateTime.Parse(date);
                 // Populate the text boxes and combo boxes
                 addEmployee_fullName.Text = name;
-                addEmployee_id.Text = cin;
+                cintxt.Text = cin;
                 phone.Text = phoneNumber;
 
                 // Set the combo box selections
@@ -231,7 +231,7 @@ namespace GRHs.Admin
 
                 // Populate the text boxes and combo boxes
                 addEmployee_fullName.Text = name;
-                addEmployee_id.Text = cin;
+                cintxt.Text = cin;
                 phone.Text = phoneNumber;
 
                 // Set the combo box selections
@@ -245,7 +245,7 @@ namespace GRHs.Admin
         {
 
             addEmployee_fullName.Text = "";
-            addEmployee_id.Text = "";
+            cintxt.Text = "";
             phone.Text = "";
 
             StartTime.Value = DateTime.Now;
@@ -307,13 +307,13 @@ namespace GRHs.Admin
                 string[] newValues =
                 {
             addEmployee_fullName.Text ?? string.Empty,
-            addEmployee_id.Text ?? string.Empty,
+            cintxt.Text ?? string.Empty,
             positiontxt.Text ?? string.Empty,
             StartTime.Text ?? string.Empty,
             DateTime.Now.ToString("yyyy-MM-dd") // Format DateTime to a string
         };
 
-                var generator = new GenerateCertification(wordsToReplace, newValues, addEmployee_id.Text);
+                var generator = new GenerateCertification(wordsToReplace, newValues, cintxt.Text);
                 generator.ReplaceWordsInWordFile();
                 return true; // Return true if generation is successful
             }

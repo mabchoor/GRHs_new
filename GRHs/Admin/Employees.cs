@@ -129,8 +129,6 @@ namespace GRHs.Admin
         {
             Add_Employee add_Employee = new Add_Employee();
             add_Employee.Show();
-
-
         }
 
         private void addEmployee_updateBtn_Click(object sender, EventArgs e)
@@ -142,7 +140,7 @@ namespace GRHs.Admin
                 return;
             }
             // Confirm deletion
-            var result = MessageBox.Show("Are you sure you want to delete the selected employee?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show("Are you sure you want to update the selected employee?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.No)
                 return;
 

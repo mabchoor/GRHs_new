@@ -88,14 +88,19 @@ namespace GRHs.authentication
         }
         private void login_signupBtn_Click(object sender, EventArgs e)
         {
-            Register loginForm = new Register();
-            loginForm.Show();
-            this.Hide();
+         
         }
 
         private void login_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        {
+            Register loginForm = new Register();
+            loginForm.Show();
+            this.Hide();
         }
     }
 }

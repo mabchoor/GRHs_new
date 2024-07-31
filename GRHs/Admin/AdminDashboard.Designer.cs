@@ -84,6 +84,7 @@
             this.exit.Size = new System.Drawing.Size(15, 16);
             this.exit.TabIndex = 0;
             this.exit.Text = "X";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // greet_user
             // 

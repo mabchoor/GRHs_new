@@ -1,5 +1,6 @@
 ﻿using GRHs.authentication;
 using GRHs.Entities;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace GRHs.Admin
 {
@@ -86,8 +88,9 @@ namespace GRHs.Admin
                     empNumber.Text = employee.EmployeeNumber;
                     addEmployee_id.Text = employee.CIN;
                     StartTime.Value = employee.StartDate;
-                    EndDate.Value = employee.EndDate ?? DateTime.Now; // Handle nullable EndDate
+                    EndDate.Enabled = false; // Handle nullable EndDate
                     addEmployee_fullName.Text = employee.User?.Name ?? string.Empty;
+                    
 
                     // Set the selected values for ComboBoxes
                     addEmployee_position.SelectedValue = employee.PositionID;
@@ -133,7 +136,7 @@ namespace GRHs.Admin
                         user.Username = username.Text;
                         user.Email = email.Text;
                         // Hash and update password if needed
-                        // user.Password = HashPassword(newPassword); // Handle password change if needed
+                       user.Password = HashPassword(passwd.Text); // Handle password change if needed
                     }
 
                     // Update related Position and Department
@@ -143,7 +146,31 @@ namespace GRHs.Admin
                     // Save changes to the database
                     _userAccount.DbContext.SaveChanges();
 
+
+
+                    // Prepare email content
+                    string subject = "Your Account Credentials";
+                    string body = $@"
+            <p>Dear {addEmployee_fullName.Text},</p>
+            <p>Your account has been successfully updated. Here are your new login details:</p>
+            <p><strong>Username:</strong> {username.Text}</p>
+            <p><strong>Password:</strong> {passwd.Text}</p>
+            <p>Please keep these details safe and secure. If you have any questions or need assistance, do not hesitate to contact us.</p>
+            <br />
+            <p>Best regards,</p>
+            <p><strong>GRHs</strong></p>
+            <p><em>This is an automated message from GRHs. Please do not reply to this email.</em></p>
+            <p><a href='mailto:no-reply@grhs.com'>no-reply@grhs.com</a></p>";
+
+
+
                     MessageBox.Show("Employee updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Send email
+                    EmailService.SendEmail(email.Text, subject, body);
+
+
+
+
                 }
                 else
                 {
@@ -156,9 +183,47 @@ namespace GRHs.Admin
             }
         }
 
+        // Helper method to hash a password
+        private string HashPassword(string password)
+        {
+            // Generate a salt
+            byte[] salt = new byte[16];
+            using (var rng = new System.Security.Cryptography.RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(salt);
+            }
+
+            // Hash the password
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: password,
+                salt: salt,
+                prf: KeyDerivationPrf.HMACSHA256,
+                iterationCount: 10000,
+                numBytesRequested: 32));
+
+            // Combine salt and hashed password
+            return Convert.ToBase64String(salt) + ":" + hashed;
+        }
+
         private void addEmployee_addBtn_Click(object sender, EventArgs e)
         {
             UpdateEmployee();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void login_showPass_CheckedChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void login_showPass_CheckedChanged_1(object sender, EventArgs e)
+        {
+            passwd.PasswordChar = login_showPass.Checked ? '\0' : '*';
+            cpasswd.PasswordChar = login_showPass.Checked ? '\0' : '*';
         }
     }
 }

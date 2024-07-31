@@ -1,6 +1,7 @@
 ﻿using GRHs.authentication;
 using GRHs.Data.UserSession;
 using GRHs.Entities;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -143,12 +144,27 @@ namespace GRHs.Admin
         }
 
         // Sample hashing function (you should replace this with your actual implementation)
+        // Helper method to hash a password
         private string HashPassword(string password)
         {
-            // Implement your password hashing logic here
-            return password; // Placeholder
-        }
+            // Generate a salt
+            byte[] salt = new byte[16];
+            using (var rng = new System.Security.Cryptography.RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(salt);
+            }
 
+            // Hash the password
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                password: password,
+                salt: salt,
+                prf: KeyDerivationPrf.HMACSHA256,
+                iterationCount: 10000,
+                numBytesRequested: 32));
+
+            // Combine salt and hashed password
+            return Convert.ToBase64String(salt) + ":" + hashed;
+        }
         private void addEmployee_Departement_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -198,6 +214,17 @@ namespace GRHs.Admin
                 // Handle any errors that might occur during data fetching
                 MessageBox.Show($"An error occurred while loading departments: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void login_showPass_CheckedChanged(object sender, EventArgs e)
+        {
+            passwd.PasswordChar = login_showPass.Checked ? '\0' : '*';
+            cpasswd.PasswordChar = login_showPass.Checked ? '\0' : '*';
         }
     }
 

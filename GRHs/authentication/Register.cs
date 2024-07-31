@@ -30,9 +30,7 @@ namespace GRHs.authentication
 
         private void signup_loginBtn_Click(object sender, EventArgs e)
         {
-            login loginForm = new login();
-            loginForm.Show();
-            this.Hide();
+           
         }
 
         private async  void signup_btn_Click(object sender, EventArgs e)
@@ -172,6 +170,11 @@ namespace GRHs.authentication
         private void Register_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -88,6 +88,7 @@
             this.exit.Size = new System.Drawing.Size(15, 16);
             this.exit.TabIndex = 0;
             this.exit.Text = "X";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // panel2
             // 
@@ -248,6 +249,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserDashboard";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.UserDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

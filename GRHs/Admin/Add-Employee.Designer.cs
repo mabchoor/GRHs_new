@@ -79,7 +79,7 @@
             // 
             // addEmployee_addBtn
             // 
-            this.addEmployee_addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.addEmployee_addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.addEmployee_addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addEmployee_addBtn.FlatAppearance.BorderSize = 0;
             this.addEmployee_addBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -98,7 +98,7 @@
             // 
             // addEmployee_importBtn
             // 
-            this.addEmployee_importBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.addEmployee_importBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.addEmployee_importBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addEmployee_importBtn.FlatAppearance.BorderSize = 0;
             this.addEmployee_importBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -233,6 +233,7 @@
             this.exit.Size = new System.Drawing.Size(15, 16);
             this.exit.TabIndex = 20;
             this.exit.Text = "X";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // guna2BorderlessForm1
             // 
@@ -262,8 +263,9 @@
             // StartTime
             // 
             this.StartTime.Checked = true;
-            this.StartTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.StartTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.StartTime.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StartTime.ForeColor = System.Drawing.Color.White;
             this.StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.StartTime.Location = new System.Drawing.Point(123, 142);
             this.StartTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -277,11 +279,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 142);
+            this.label8.Location = new System.Drawing.Point(26, 153);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 15);
+            this.label8.Size = new System.Drawing.Size(64, 15);
             this.label8.TabIndex = 24;
-            this.label8.Text = "Start Time:";
+            this.label8.Text = "Start Date:";
             // 
             // guna2GroupBox1
             // 
@@ -300,7 +302,7 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(342, 244);
             this.guna2GroupBox1.TabIndex = 25;
-            this.guna2GroupBox1.Text = "guna2GroupBox1";
+            this.guna2GroupBox1.Text = "User information";
             // 
             // label11
             // 
@@ -330,6 +332,7 @@
             this.login_showPass.TabIndex = 26;
             this.login_showPass.Text = "Show Password";
             this.login_showPass.UseVisualStyleBackColor = true;
+            this.login_showPass.CheckedChanged += new System.EventHandler(this.login_showPass_CheckedChanged);
             // 
             // label10
             // 
@@ -346,6 +349,7 @@
             this.cpasswd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cpasswd.Location = new System.Drawing.Point(160, 166);
             this.cpasswd.Name = "cpasswd";
+            this.cpasswd.PasswordChar = '*';
             this.cpasswd.Size = new System.Drawing.Size(152, 21);
             this.cpasswd.TabIndex = 25;
             // 
@@ -364,6 +368,7 @@
             this.passwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwd.Location = new System.Drawing.Point(160, 130);
             this.passwd.Name = "passwd";
+            this.passwd.PasswordChar = '*';
             this.passwd.Size = new System.Drawing.Size(152, 21);
             this.passwd.TabIndex = 23;
             // 
@@ -381,7 +386,7 @@
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(300, 180);
             this.guna2GroupBox2.TabIndex = 26;
-            this.guna2GroupBox2.Text = "guna2GroupBox2";
+            this.guna2GroupBox2.Text = "Employee information";
             // 
             // guna2GroupBox3
             // 
@@ -397,11 +402,11 @@
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(345, 200);
             this.guna2GroupBox3.TabIndex = 27;
-            this.guna2GroupBox3.Text = "guna2GroupBox3";
+            this.guna2GroupBox3.Text = "Position information";
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.guna2Panel1.Controls.Add(this.exit);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;

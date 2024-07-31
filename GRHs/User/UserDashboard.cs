@@ -87,5 +87,15 @@ namespace GRHs.User
             var login = new GRHs.authentication.login();
             login.Show();
         }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void UserDashboard_Load(object sender, EventArgs e)
+        {
+            AddUserControl(new User_Dash(_user.UserID));
+        }
     }
 }

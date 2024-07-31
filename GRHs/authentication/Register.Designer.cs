@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.signup_btn = new System.Windows.Forms.Button();
             this.signup_email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,20 +39,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.signup_loginBtn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.signup_showPass = new System.Windows.Forms.CheckBox();
             this.signup_Password = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.signup_username = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // signup_btn
             // 
-            this.signup_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
+            this.signup_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(80)))), ((int)(((byte)(91)))));
             this.signup_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.signup_btn.FlatAppearance.BorderSize = 0;
             this.signup_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -61,7 +63,7 @@
             this.signup_btn.ForeColor = System.Drawing.Color.White;
             this.signup_btn.Location = new System.Drawing.Point(359, 404);
             this.signup_btn.Name = "signup_btn";
-            this.signup_btn.Size = new System.Drawing.Size(93, 34);
+            this.signup_btn.Size = new System.Drawing.Size(93, 27);
             this.signup_btn.TabIndex = 26;
             this.signup_btn.Text = "SIGNUP";
             this.signup_btn.UseVisualStyleBackColor = false;
@@ -130,15 +132,16 @@
             this.exit.Size = new System.Drawing.Size(17, 18);
             this.exit.TabIndex = 19;
             this.exit.Text = "X";
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(113)))), ((int)(((byte)(123)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(80)))), ((int)(((byte)(91)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.guna2HtmlLabel1);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.signup_loginBtn);
-            this.panel1.Controls.Add(this.label5);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -164,35 +167,6 @@
             this.label6.Size = new System.Drawing.Size(229, 19);
             this.label6.TabIndex = 2;
             this.label6.Text = "Employee Management System";
-            // 
-            // signup_loginBtn
-            // 
-            this.signup_loginBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(64)))), ((int)(((byte)(66)))));
-            this.signup_loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signup_loginBtn.FlatAppearance.BorderSize = 0;
-            this.signup_loginBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Purple;
-            this.signup_loginBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Purple;
-            this.signup_loginBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signup_loginBtn.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signup_loginBtn.ForeColor = System.Drawing.Color.White;
-            this.signup_loginBtn.Location = new System.Drawing.Point(22, 403);
-            this.signup_loginBtn.Name = "signup_loginBtn";
-            this.signup_loginBtn.Size = new System.Drawing.Size(226, 31);
-            this.signup_loginBtn.TabIndex = 1;
-            this.signup_loginBtn.Text = "SIGN IN";
-            this.signup_loginBtn.UseVisualStyleBackColor = false;
-            this.signup_loginBtn.Click += new System.EventHandler(this.signup_loginBtn_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(81, 379);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 14);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Login your Account";
             // 
             // signup_showPass
             // 
@@ -249,6 +223,34 @@
             this.label7.Text = "Username:";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // guna2BorderlessForm1
+            // 
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(170, 401);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(41, 17);
+            this.guna2HtmlLabel1.TabIndex = 20;
+            this.guna2HtmlLabel1.Text = "Sign In";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(36, 403);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 14);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Register your Account";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +269,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Register";
             this.Text = "Register";
             this.Load += new System.EventHandler(this.Register_Load);
@@ -290,12 +293,13 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button signup_loginBtn;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox signup_showPass;
         private System.Windows.Forms.TextBox signup_Password;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox signup_username;
         private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private System.Windows.Forms.Label label5;
     }
 }

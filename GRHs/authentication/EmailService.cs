@@ -16,7 +16,7 @@ public static class EmailService
         {
             From = new MailAddress(fromEmail),
             Subject = subject,
-            Body = CreateEmailBody(toEmail, body),
+            Body =  body,
             IsBodyHtml = true
         };
         mailMessage.To.Add(toEmail);
@@ -69,19 +69,5 @@ public static class EmailService
         }
     }
 
-    private static string CreateEmailBody(string recipient, string bodyContent)
-    {
-        return $@"
-            <html>
-            <body>
-                <p>Dear {recipient},</p>
-                <p>{bodyContent}</p>
-                <br />
-                <p>Best regards,</p>
-                <p><strong>GRHs</strong></p>
-                <p><em>This is an automated message from GRHs. Please do not reply to this email.</em></p>
-                <p><a href='mailto:no-reply@grhs.com'>no-reply@grhs.com</a></p>
-            </body>
-            </html>";
-    }
+   
 }
