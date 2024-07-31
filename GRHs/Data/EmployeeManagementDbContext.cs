@@ -1,4 +1,5 @@
-﻿using GRHs.Entities;
+﻿
+using GRHs.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace GRHs.Data
@@ -11,8 +12,6 @@ namespace GRHs.Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Attestation> Attestations { get; set; }
         public DbSet<Holiday> Holidays { get; set; }
-        public DbSet<Calendar> Calendars { get; set; }
-        public DbSet<CalendarHoliday> CalendarHolidays { get; set; }
         public DbSet<UserSessions> UserSessions { get; set; }
         public DbSet<Leave> Leaves { get; set; }
         public DbSet<Departement> Departements { get; set; }
@@ -25,19 +24,6 @@ namespace GRHs.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<CalendarHoliday>()
-                .HasKey(ch => new { ch.CalendarID, ch.HolidayID });
-
-            modelBuilder.Entity<CalendarHoliday>()
-                .HasOne(ch => ch.Calendar)
-                .WithMany(c => c.CalendarHolidays)
-                .HasForeignKey(ch => ch.CalendarID);
-
-            modelBuilder.Entity<CalendarHoliday>()
-                .HasOne(ch => ch.Holiday)
-                .WithMany(h => h.CalendarHolidays)
-                .HasForeignKey(ch => ch.HolidayID);
 
             modelBuilder.Entity<UserSessions>()
                 .HasOne(us => us.User)

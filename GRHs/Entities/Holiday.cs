@@ -12,6 +12,6 @@ namespace GRHs.Entities
         public string Name { get; set; }
         public int Daysnumber { get; set; }
         public DateTime Date { get; set; }
-        public ICollection<CalendarHoliday> CalendarHolidays { get; set; }
+        
     }
 }

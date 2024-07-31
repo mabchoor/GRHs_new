@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Drawing;
+﻿using ClosedXML.Excel;
+using DocumentFormat.OpenXml.Drawing;
 using GRHs.authentication;
 using GRHs.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -198,37 +199,51 @@ namespace GRHs.Admin
 
                         if (employee != null)
                         {
-                            // Fetch holidays within the leave period
-                            var holidays = _userAccount.DbContext.Holidays
-                                .Where(h => h.Date >= startDate && h.Date <= initialEndDate)
+                            // Fetch existing leaves for the employee within the new leave period
+                            var existingLeaves = _userAccount.DbContext.Leaves
+                                .Where(l => l.EmployeeID == employeeID &&
+                                            ((l.StartDate <= initialEndDate && l.EndDate >= startDate)))
                                 .ToList();
 
-                            // Calculate the total number of holiday days within the leave period
-                            int holidayDays = holidays.Sum(h => h.Daysnumber);
-
-                            // Adjust the end date by adding the total number of holiday days
-                            DateTime adjustedEndDate = initialEndDate.AddDays(holidayDays);
-
-                            // Create a new Leave record
-                            var newLeave = new Leave
+                            if (existingLeaves.Any())
                             {
-                                EmployeeID = employeeID,
-                                StartDate = startDate,
-                                EndDate = adjustedEndDate, // Adjusted end date
-                                Type = leaveType,
-                                Reason = typeleave.Text, // Assuming there's a textbox for reason
-                                NumberOfDays = numberOfDays, // Keep the original number of days
-                                Status = LeaveStatus.Pending // Default status
-                            };
+                                // Overlapping leave detected
+                                MessageBox.Show("The employee already has a leave scheduled during this period.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                // Fetch holidays within the leave period
+                                var holidays = _userAccount.DbContext.Holidays
+                                    .Where(h => h.Date >= startDate && h.Date <= initialEndDate)
+                                    .ToList();
 
-                            // Add the new leave record to the database
-                            _userAccount.DbContext.Leaves.Add(newLeave);
-                            _userAccount.DbContext.SaveChanges();
+                                // Calculate the total number of holiday days within the leave period
+                                int holidayDays = holidays.Sum(h => h.Daysnumber);
 
-                            MessageBox.Show("Leave added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Adjust the end date by adding the total number of holiday days
+                                DateTime adjustedEndDate = initialEndDate.AddDays(holidayDays);
 
-                            // Optionally, clear the fields or refresh the view
-                            salary_clearBtn_Click(sender, e); // Call the method to clear fields
+                                // Create a new Leave record
+                                var newLeave = new Leave
+                                {
+                                    EmployeeID = employeeID,
+                                    StartDate = startDate,
+                                    EndDate = adjustedEndDate, // Adjusted end date
+                                    Type = leaveType,
+                                    Reason = typeleave.Text, // Assuming there's a textbox for reason
+                                    NumberOfDays = numberOfDays, // Keep the original number of days
+                                    Status = LeaveStatus.Pending // Default status
+                                };
+
+                                // Add the new leave record to the database
+                                _userAccount.DbContext.Leaves.Add(newLeave);
+                                _userAccount.DbContext.SaveChanges();
+
+                                MessageBox.Show("Leave added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                // Optionally, clear the fields or refresh the view
+                                salary_clearBtn_Click(sender, e); // Call the method to clear fields
+                            }
                         }
                         else
                         {
@@ -280,47 +295,7 @@ namespace GRHs.Admin
             }
         }
 
-        private void AddLeave(int employeeID, DateTime startDate, int numberOfDays, LeaveType leaveType, string reason, LeaveStatus status)
-        {
-            try
-            {
-                using (var dbContext = _userAccount.DbContext) // Use your DbContext here
-                {
-                    // Calculate the EndDate based on StartDate and NumberOfDays
-                    DateTime endDate = startDate.AddDays(numberOfDays);
-
-                    // Create a new Leave object
-                    var leave = new Leave
-                    {
-                        EmployeeID = employeeID,
-                        StartDate = startDate,
-                        EndDate = endDate,
-                        Type = leaveType,
-                        Reason = reason,
-                        NumberOfDays = numberOfDays,
-                        Status = status
-                    };
-
-                    // Add the new leave record to the DbSet
-                    dbContext.Leaves.Add(leave);
-
-                    // Save changes to the database
-                    dbContext.SaveChanges();
-
-                    // Inform the user of success
-                    MessageBox.Show("Leave added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    // Optionally, clear the input fields or refresh the view
-                    ClearLeaveFields();
-                    ApplyFilters(); // Refresh the DataGridView if needed
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred while adding the leave: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+     
         private void LoadLeaveTypes()
         {
             try
@@ -377,7 +352,42 @@ namespace GRHs.Admin
 
         private void addEmployee_updateBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Ensure a row is selected
+                if (leavsView.SelectedRows.Count > 0)
+                {
+                    // Retrieve the selected row
+                    DataGridViewRow selectedRow = leavsView.SelectedRows[0];
 
+                    // Extract the leave ID from the selected row
+                    int leaveID = Convert.ToInt32(selectedRow.Cells["Leave ID"].Value);
+
+                    // Retrieve and parse other input values
+                    if (DateTime.TryParse(datestart.Text, out DateTime newStartDate) &&
+                        int.TryParse(DaysNumberupdate.Text, out int newNumberOfDays) &&
+                        Enum.TryParse(typeleaveup.SelectedValue?.ToString(), out LeaveType newLeaveType))
+                    {
+                        // Update the leave
+                        UpdateLeave(leaveID, newStartDate, newLeaveType, newNumberOfDays);
+
+                        // Optionally, refresh the view
+                        LoadLeaves();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid input. Please check your entries.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please select a leave from the DataGridView.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the leave: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void LoadLeaves()
         {
@@ -427,7 +437,6 @@ namespace GRHs.Admin
             }
         }
 
-
         private void leavsView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -456,7 +465,215 @@ namespace GRHs.Admin
                 DaysNumberupdate.Text = numberOfDays.ToString();
                 // Set the SelectedValue to the parsed LeaveType
                 typeleaveup.SelectedValue = Enum.Parse(typeof(LeaveType), leaveType);
+                positionUpdate.Text= employeePhone;
             }
+        }
+
+        private void UpdateLeave(int leaveID, DateTime newStartDate, LeaveType newLeaveType, int newNumberOfDays)
+        {
+            try
+            {
+                // Find the existing leave record
+                var leave = _userAccount.DbContext.Leaves.SingleOrDefault(l => l.LeaveID == leaveID);
+
+                if (leave != null)
+                {
+                    // Calculate initial end date
+                    DateTime initialEndDate = newStartDate.AddDays(newNumberOfDays);
+
+                    // Fetch holidays within the leave period
+                    var holidays = _userAccount.DbContext.Holidays
+                        .Where(h => h.Date >= newStartDate && h.Date <= initialEndDate)
+                        .ToList();
+
+                    // Calculate the total number of holiday days within the leave period
+                    int holidayDays = holidays.Sum(h => h.Daysnumber);
+
+                    // Adjust the end date by adding the total number of holiday days
+                    DateTime adjustedEndDate = initialEndDate.AddDays(holidayDays);
+
+                    // Update leave details
+                    leave.StartDate = newStartDate;
+                    leave.EndDate = adjustedEndDate; // Adjusted end date
+                    leave.Type = newLeaveType;
+                    leave.NumberOfDays = newNumberOfDays;
+
+                    // Save changes to the database
+                    _userAccount.DbContext.SaveChanges();
+
+                    MessageBox.Show("Leave updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Leave not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while updating the leave: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void ExportDataGridViewToExcel(DataGridView dataGridView)
+        {
+            try
+            {
+                // Create a new DataTable and fill it with the DataGridView data
+                var dataTable = new DataTable();
+
+                // Add columns to DataTable
+                foreach (DataGridViewColumn column in dataGridView.Columns)
+                {
+                    dataTable.Columns.Add(column.HeaderText);
+                }
+
+                // Add rows to DataTable
+                foreach (DataGridViewRow row in dataGridView.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        DataRow dataRow = dataTable.NewRow();
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            dataRow[cell.ColumnIndex] = cell.Value ?? ""; // Convert object to string and handle null values
+                        }
+                        dataTable.Rows.Add(dataRow);
+                    }
+                }
+
+                if (dataTable.Rows.Count > 0) // Check if there are rows to export
+                {
+                    // Create a new Excel workbook and worksheet
+                    using (var workbook = new XLWorkbook())
+                    {
+                        var worksheet = workbook.Worksheets.Add("Sheet1");
+
+                        // Load data from DataTable to worksheet
+                        worksheet.Cell(1, 1).InsertTable(dataTable);
+
+                        // Save the workbook to a file
+                        using (var saveFileDialog = new SaveFileDialog())
+                        {
+                            saveFileDialog.Filter = "Excel Files|*.xlsx";
+                            saveFileDialog.Title = "Save an Excel File";
+                            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                            {
+                                workbook.SaveAs(saveFileDialog.FileName);
+                                MessageBox.Show("Data exported successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No data to export.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while exporting data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DeleteLeave(int leaveID)
+        {
+            try
+            {
+                // Find the leave record in the database
+                var leave = _userAccount.DbContext.Leaves.SingleOrDefault(l => l.LeaveID == leaveID);
+
+                if (leave != null)
+                {
+                    // Remove the leave record from the DbSet
+                    _userAccount.DbContext.Leaves.Remove(leave);
+
+                    // Save changes to the database
+                    _userAccount.DbContext.SaveChanges();
+
+                    // Inform the user of success
+                    MessageBox.Show("Leave deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Refresh the view to reflect changes
+                    LoadLeaves();
+                }
+                else
+                {
+                    MessageBox.Show("Leave not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while deleting the leave: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ClearInputFields()
+        {
+            try
+            {
+                // Clear textboxes
+                cin.Text = string.Empty;
+                name.Text = string.Empty;
+                positionUpdate.Text = string.Empty;
+                DaysNumberupdate.Text = string.Empty;
+
+                // Reset ComboBox selection
+                typeleaveup.SelectedIndex = -1;
+
+                // Set the date picker to the current date or a default value
+                datestart.Value = DateTime.Now;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while clearing input fields: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ExportDataGridViewToExcel(leavsView);
+        }
+
+        private void addEmployee_deleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Ensure a row is selected
+                if (leavsView.SelectedRows.Count > 0)
+                {
+                    // Retrieve the selected row
+                    DataGridViewRow selectedRow = leavsView.SelectedRows[0];
+
+                    // Extract the leave ID from the selected row
+                    int leaveID = Convert.ToInt32(selectedRow.Cells["Leave ID"].Value);
+
+                    // Delete the leave record
+                    DeleteLeave(leaveID);
+                }
+                else
+                {
+                    MessageBox.Show("Please select a leave from the DataGridView.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while deleting the leave: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void addEmployee_clearBtn_Click(object sender, EventArgs e)
+        {
+            // Clear input fields
+            ClearInputFields();
+        }
+
+        private void salary_clearBtn_Click_1(object sender, EventArgs e)
+        {
+            StartTime.Value = DateTime.Now;
+            // Populate the text boxes and combo boxes
+            addEmployee_fullName.Text = "";
+            addEmployee_cin.Text = "";
+            DaysNumber.Text = "";
+            positiontxt.Text = "";
+            typeleave.SelectedIndex = -1;
         }
     }
 }

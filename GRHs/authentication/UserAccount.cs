@@ -24,7 +24,7 @@ namespace GRHs.authentication
 
 
         // Register a new user with additional details
-        public async Task<(string Message, bool Status)> RegisterAsync(string username, string password, string email, string name, string imagePath = null, int role = 0)
+        public async Task<(string Message, bool Status)> RegisterAsync(string username, string password, string email, string name, string imagePath = null, int role = 1)
         {
             // Validate input
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(name))

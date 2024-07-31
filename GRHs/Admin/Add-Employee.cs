@@ -112,6 +112,24 @@ namespace GRHs.Admin
                 _userAccount.DbContext.Employees.Add(newEmployee);
                 _userAccount.DbContext.SaveChanges();
 
+
+                // Prepare email content
+                string subject = "Your Account Credentials";
+                string body = $@"
+            <p>Dear {userName},</p>
+            <p>Your account has been successfully created. Here are your login details:</p>
+            <p><strong>Username:</strong> {userName}</p>
+            <p><strong>Password:</strong> {userPassword}</p>
+            <p>Please keep these details safe and secure. If you have any questions or need assistance, do not hesitate to contact us.</p>
+            <br />
+            <p>Best regards,</p>
+            <p><strong>GRHs</strong></p>
+            <p><em>This is an automated message from GRHs. Please do not reply to this email.</em></p>
+            <p><a href='mailto:no-reply@grhs.com'>no-reply@grhs.com</a></p>";
+
+                // Send email
+                EmailService.SendEmail(userEmail, subject, body);
+
                 // Optionally, inform the user
                 MessageBox.Show("Employee added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

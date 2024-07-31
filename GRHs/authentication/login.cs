@@ -43,14 +43,20 @@ namespace GRHs.authentication
                 MessageBox.Show("Username or email is required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (string.IsNullOrEmpty(pseudo))
-            {
-                    MessageBox.Show("Password is required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-             }
 
-            // Create an instance of UserAccount
-            // Assuming _userAccount is properly initialized elsewhere in your code
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Password is required.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Ensure _userAccount is properly initialized
+            if (_userAccount == null)
+            {
+                _userAccount = new UserAccount(); // Replace this with your actual initialization if necessary
+            }
+
+            // Call the asynchronous login method
             var (user, userSession, message) = await _userAccount.LoginAsync(pseudo, password);
 
             if (user == null || userSession == null)
@@ -59,19 +65,15 @@ namespace GRHs.authentication
             }
             else
             {
-                MessageBox.Show("Login successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Optionally, you can store the session or proceed to the main application form
-
                 // Check user role and navigate to the appropriate dashboard
-                if (user.Role == 0) // Assuming 1 is the role for a regular user
+                if (user.Role == 0) // Assuming 0 is the role for a regular user
                 {
                     // Open User Dashboard
-                    var userDashboard = new UserDashboard(); // Replace with your actual user dashboard form
+                    var userDashboard = new UserDashboard(user.UserID); // Replace with your actual user dashboard form
                     this.Hide();
                     userDashboard.Show();
-
                 }
-                else if (user.Role == 1) // Assuming 2 is the role for an admin
+                else if (user.Role == 1) // Assuming 1 is the role for an admin
                 {
                     // Open Admin Dashboard
                     var adminDashboard = new AdminDashboard(); // Replace with your actual admin dashboard form
@@ -82,13 +84,8 @@ namespace GRHs.authentication
                 {
                     MessageBox.Show("Unknown role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                
-                
             }
-
-    }
-
+        }
         private void login_signupBtn_Click(object sender, EventArgs e)
         {
             Register loginForm = new Register();
@@ -98,7 +95,7 @@ namespace GRHs.authentication
 
         private void login_Load(object sender, EventArgs e)
         {
-
+           
         }
     }
 }

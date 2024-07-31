@@ -42,6 +42,7 @@
             this.rechercher = new Guna.UI2.WinForms.Guna2TextBox();
             this.EmployeeView = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.typeleave = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DaysNumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.positiontxt = new System.Windows.Forms.TextBox();
@@ -56,32 +57,31 @@
             this.addEmployee_cin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2ColorTransition1 = new Guna.UI2.WinForms.Guna2ColorTransition(this.components);
-            this.typeleave = new Guna.UI2.WinForms.Guna2ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.addEmployee_clearBtn = new System.Windows.Forms.Button();
-            this.addEmployee_deleteBtn = new System.Windows.Forms.Button();
-            this.addEmployee_updateBtn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.positionUpdate = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.cin = new System.Windows.Forms.TextBox();
             this.typeleaveup = new Guna.UI2.WinForms.Guna2ComboBox();
             this.DaysNumberupdate = new System.Windows.Forms.TextBox();
             this.datestart = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.leavsView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.positionUpdate = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
+            this.cin = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.phone = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.addEmployee_clearBtn = new System.Windows.Forms.Button();
+            this.addEmployee_deleteBtn = new System.Windows.Forms.Button();
+            this.addEmployee_updateBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.leavsView = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeeView)).BeginInit();
@@ -244,6 +244,21 @@
             this.guna2GroupBox2.Text = "guna2GroupBox2";
             this.guna2GroupBox2.Click += new System.EventHandler(this.guna2GroupBox2_Click);
             // 
+            // typeleave
+            // 
+            this.typeleave.BackColor = System.Drawing.Color.Transparent;
+            this.typeleave.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.typeleave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.typeleave.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.typeleave.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.typeleave.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.typeleave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.typeleave.ItemHeight = 30;
+            this.typeleave.Location = new System.Drawing.Point(123, 190);
+            this.typeleave.Name = "typeleave";
+            this.typeleave.Size = new System.Drawing.Size(140, 36);
+            this.typeleave.TabIndex = 41;
+            // 
             // DaysNumber
             // 
             this.DaysNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -258,9 +273,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(18, 249);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 15);
+            this.label1.Size = new System.Drawing.Size(93, 15);
             this.label1.TabIndex = 39;
-            this.label1.Text = "Position:";
+            this.label1.Text = "Number of days";
             // 
             // positiontxt
             // 
@@ -272,7 +287,7 @@
             // 
             // salary_clearBtn
             // 
-            this.salary_clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.salary_clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.salary_clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.salary_clearBtn.FlatAppearance.BorderSize = 0;
             this.salary_clearBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -283,14 +298,15 @@
             this.salary_clearBtn.ForeColor = System.Drawing.Color.White;
             this.salary_clearBtn.Location = new System.Drawing.Point(177, 379);
             this.salary_clearBtn.Name = "salary_clearBtn";
-            this.salary_clearBtn.Size = new System.Drawing.Size(96, 37);
+            this.salary_clearBtn.Size = new System.Drawing.Size(96, 29);
             this.salary_clearBtn.TabIndex = 34;
             this.salary_clearBtn.Text = "Clear";
             this.salary_clearBtn.UseVisualStyleBackColor = false;
+            this.salary_clearBtn.Click += new System.EventHandler(this.salary_clearBtn_Click_1);
             // 
             // addEmployee_addBtn
             // 
-            this.addEmployee_addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.addEmployee_addBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.addEmployee_addBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.addEmployee_addBtn.FlatAppearance.BorderSize = 0;
             this.addEmployee_addBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -301,7 +317,7 @@
             this.addEmployee_addBtn.ForeColor = System.Drawing.Color.White;
             this.addEmployee_addBtn.Location = new System.Drawing.Point(25, 379);
             this.addEmployee_addBtn.Name = "addEmployee_addBtn";
-            this.addEmployee_addBtn.Size = new System.Drawing.Size(113, 37);
+            this.addEmployee_addBtn.Size = new System.Drawing.Size(113, 29);
             this.addEmployee_addBtn.TabIndex = 31;
             this.addEmployee_addBtn.Text = "Add";
             this.addEmployee_addBtn.UseVisualStyleBackColor = false;
@@ -310,8 +326,9 @@
             // StartTime
             // 
             this.StartTime.Checked = true;
-            this.StartTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.StartTime.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.StartTime.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StartTime.ForeColor = System.Drawing.Color.White;
             this.StartTime.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.StartTime.Location = new System.Drawing.Point(119, 302);
             this.StartTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
@@ -396,24 +413,9 @@
         System.Drawing.Color.Blue,
         System.Drawing.Color.Orange};
             // 
-            // typeleave
-            // 
-            this.typeleave.BackColor = System.Drawing.Color.Transparent;
-            this.typeleave.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.typeleave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.typeleave.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.typeleave.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.typeleave.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.typeleave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.typeleave.ItemHeight = 30;
-            this.typeleave.Location = new System.Drawing.Point(123, 190);
-            this.typeleave.Name = "typeleave";
-            this.typeleave.Size = new System.Drawing.Size(140, 36);
-            this.typeleave.TabIndex = 41;
-            // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -423,7 +425,7 @@
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = global::GRHs.Properties.Resources.icons8_employee_card_30px;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(739, 200);
+            this.button2.Location = new System.Drawing.Point(739, 77);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 40);
             this.button2.TabIndex = 39;
@@ -433,7 +435,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
@@ -443,7 +445,7 @@
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = global::GRHs.Properties.Resources.icons8_employee_card_30px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(739, 149);
+            this.button1.Location = new System.Drawing.Point(739, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 40);
             this.button1.TabIndex = 38;
@@ -455,7 +457,7 @@
             // 
             this.guna2Panel2.Controls.Add(this.panel3);
             this.guna2Panel2.Controls.Add(this.panel1);
-            this.guna2Panel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel2.Location = new System.Drawing.Point(0, -1);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(733, 565);
             this.guna2Panel2.TabIndex = 43;
@@ -473,7 +475,7 @@
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.label12);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.phone);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.addEmployee_clearBtn);
@@ -486,158 +488,43 @@
             this.panel3.Size = new System.Drawing.Size(605, 215);
             this.panel3.TabIndex = 4;
             // 
-            // addEmployee_clearBtn
+            // typeleaveup
             // 
-            this.addEmployee_clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.addEmployee_clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee_clearBtn.FlatAppearance.BorderSize = 0;
-            this.addEmployee_clearBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addEmployee_clearBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEmployee_clearBtn.ForeColor = System.Drawing.Color.White;
-            this.addEmployee_clearBtn.Location = new System.Drawing.Point(442, 162);
-            this.addEmployee_clearBtn.Name = "addEmployee_clearBtn";
-            this.addEmployee_clearBtn.Size = new System.Drawing.Size(113, 37);
-            this.addEmployee_clearBtn.TabIndex = 17;
-            this.addEmployee_clearBtn.Text = "Clear";
-            this.addEmployee_clearBtn.UseVisualStyleBackColor = false;
+            this.typeleaveup.BackColor = System.Drawing.Color.Transparent;
+            this.typeleaveup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.typeleaveup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.typeleaveup.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.typeleaveup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.typeleaveup.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.typeleaveup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.typeleaveup.ItemHeight = 30;
+            this.typeleaveup.Location = new System.Drawing.Point(384, 22);
+            this.typeleaveup.Name = "typeleaveup";
+            this.typeleaveup.Size = new System.Drawing.Size(140, 36);
+            this.typeleaveup.TabIndex = 48;
             // 
-            // addEmployee_deleteBtn
+            // DaysNumberupdate
             // 
-            this.addEmployee_deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.addEmployee_deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee_deleteBtn.FlatAppearance.BorderSize = 0;
-            this.addEmployee_deleteBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_deleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_deleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addEmployee_deleteBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEmployee_deleteBtn.ForeColor = System.Drawing.Color.White;
-            this.addEmployee_deleteBtn.Location = new System.Drawing.Point(164, 162);
-            this.addEmployee_deleteBtn.Name = "addEmployee_deleteBtn";
-            this.addEmployee_deleteBtn.Size = new System.Drawing.Size(113, 37);
-            this.addEmployee_deleteBtn.TabIndex = 16;
-            this.addEmployee_deleteBtn.Text = "Delete";
-            this.addEmployee_deleteBtn.UseVisualStyleBackColor = false;
+            this.DaysNumberupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DaysNumberupdate.Location = new System.Drawing.Point(384, 69);
+            this.DaysNumberupdate.Name = "DaysNumberupdate";
+            this.DaysNumberupdate.Size = new System.Drawing.Size(152, 21);
+            this.DaysNumberupdate.TabIndex = 47;
             // 
-            // addEmployee_updateBtn
+            // datestart
             // 
-            this.addEmployee_updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.addEmployee_updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addEmployee_updateBtn.FlatAppearance.BorderSize = 0;
-            this.addEmployee_updateBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.addEmployee_updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addEmployee_updateBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEmployee_updateBtn.ForeColor = System.Drawing.Color.White;
-            this.addEmployee_updateBtn.Location = new System.Drawing.Point(33, 162);
-            this.addEmployee_updateBtn.Name = "addEmployee_updateBtn";
-            this.addEmployee_updateBtn.Size = new System.Drawing.Size(113, 37);
-            this.addEmployee_updateBtn.TabIndex = 15;
-            this.addEmployee_updateBtn.Text = "Update";
-            this.addEmployee_updateBtn.UseVisualStyleBackColor = false;
-            this.addEmployee_updateBtn.Click += new System.EventHandler(this.addEmployee_updateBtn_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel4.Location = new System.Drawing.Point(0, 299);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(839, 226);
-            this.panel4.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.leavsView);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(67, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(604, 279);
-            this.panel1.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(18, 21);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 23);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Leave\'s Data";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Location = new System.Drawing.Point(0, 299);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(839, 226);
-            this.panel2.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(40, 105);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 15);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Position:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(30, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 15);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Full Name:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(44, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(30, 15);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "CIN:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(288, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 15);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Position:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(288, 110);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 15);
-            this.label11.TabIndex = 41;
-            this.label11.Text = "Start Time:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(288, 32);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 15);
-            this.label12.TabIndex = 40;
-            this.label12.Text = "Department:";
+            this.datestart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
+            this.datestart.Checked = true;
+            this.datestart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
+            this.datestart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.datestart.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.datestart.Location = new System.Drawing.Point(368, 105);
+            this.datestart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.datestart.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.datestart.Name = "datestart";
+            this.datestart.Size = new System.Drawing.Size(156, 36);
+            this.datestart.TabIndex = 46;
+            this.datestart.Value = new System.DateTime(2024, 7, 29, 6, 12, 45, 306);
             // 
             // positionUpdate
             // 
@@ -666,42 +553,161 @@
             this.cin.Size = new System.Drawing.Size(152, 21);
             this.cin.TabIndex = 43;
             // 
-            // typeleaveup
+            // label10
             // 
-            this.typeleaveup.BackColor = System.Drawing.Color.Transparent;
-            this.typeleaveup.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.typeleaveup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.typeleaveup.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.typeleaveup.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.typeleaveup.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.typeleaveup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.typeleaveup.ItemHeight = 30;
-            this.typeleaveup.Location = new System.Drawing.Point(384, 22);
-            this.typeleaveup.Name = "typeleaveup";
-            this.typeleaveup.Size = new System.Drawing.Size(140, 36);
-            this.typeleaveup.TabIndex = 48;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(288, 69);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(96, 15);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Number of days:";
             // 
-            // DaysNumberupdate
+            // label11
             // 
-            this.DaysNumberupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DaysNumberupdate.Location = new System.Drawing.Point(368, 67);
-            this.DaysNumberupdate.Name = "DaysNumberupdate";
-            this.DaysNumberupdate.Size = new System.Drawing.Size(152, 21);
-            this.DaysNumberupdate.TabIndex = 47;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(288, 110);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(66, 15);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Start Time:";
             // 
-            // datestart
+            // label12
             // 
-            this.datestart.Checked = true;
-            this.datestart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.datestart.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.datestart.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.datestart.Location = new System.Drawing.Point(368, 105);
-            this.datestart.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.datestart.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.datestart.Name = "datestart";
-            this.datestart.Size = new System.Drawing.Size(156, 36);
-            this.datestart.TabIndex = 46;
-            this.datestart.Value = new System.DateTime(2024, 7, 29, 6, 12, 45, 306);
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(288, 32);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 15);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Type of leave";
+            // 
+            // phone
+            // 
+            this.phone.AutoSize = true;
+            this.phone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone.Location = new System.Drawing.Point(40, 105);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(46, 15);
+            this.phone.TabIndex = 20;
+            this.phone.Text = "Phone ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(30, 69);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 15);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Full Name:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(44, 32);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(30, 15);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "CIN:";
+            // 
+            // addEmployee_clearBtn
+            // 
+            this.addEmployee_clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
+            this.addEmployee_clearBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addEmployee_clearBtn.FlatAppearance.BorderSize = 0;
+            this.addEmployee_clearBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEmployee_clearBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEmployee_clearBtn.ForeColor = System.Drawing.Color.White;
+            this.addEmployee_clearBtn.Location = new System.Drawing.Point(442, 162);
+            this.addEmployee_clearBtn.Name = "addEmployee_clearBtn";
+            this.addEmployee_clearBtn.Size = new System.Drawing.Size(113, 37);
+            this.addEmployee_clearBtn.TabIndex = 17;
+            this.addEmployee_clearBtn.Text = "Clear";
+            this.addEmployee_clearBtn.UseVisualStyleBackColor = false;
+            this.addEmployee_clearBtn.Click += new System.EventHandler(this.addEmployee_clearBtn_Click);
+            // 
+            // addEmployee_deleteBtn
+            // 
+            this.addEmployee_deleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
+            this.addEmployee_deleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addEmployee_deleteBtn.FlatAppearance.BorderSize = 0;
+            this.addEmployee_deleteBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_deleteBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_deleteBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEmployee_deleteBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEmployee_deleteBtn.ForeColor = System.Drawing.Color.White;
+            this.addEmployee_deleteBtn.Location = new System.Drawing.Point(164, 162);
+            this.addEmployee_deleteBtn.Name = "addEmployee_deleteBtn";
+            this.addEmployee_deleteBtn.Size = new System.Drawing.Size(113, 37);
+            this.addEmployee_deleteBtn.TabIndex = 16;
+            this.addEmployee_deleteBtn.Text = "Delete";
+            this.addEmployee_deleteBtn.UseVisualStyleBackColor = false;
+            this.addEmployee_deleteBtn.Click += new System.EventHandler(this.addEmployee_deleteBtn_Click);
+            // 
+            // addEmployee_updateBtn
+            // 
+            this.addEmployee_updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
+            this.addEmployee_updateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addEmployee_updateBtn.FlatAppearance.BorderSize = 0;
+            this.addEmployee_updateBtn.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_updateBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_updateBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.addEmployee_updateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEmployee_updateBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEmployee_updateBtn.ForeColor = System.Drawing.Color.White;
+            this.addEmployee_updateBtn.Location = new System.Drawing.Point(33, 162);
+            this.addEmployee_updateBtn.Name = "addEmployee_updateBtn";
+            this.addEmployee_updateBtn.Size = new System.Drawing.Size(113, 37);
+            this.addEmployee_updateBtn.TabIndex = 15;
+            this.addEmployee_updateBtn.Text = "Update";
+            this.addEmployee_updateBtn.UseVisualStyleBackColor = false;
+            this.addEmployee_updateBtn.Click += new System.EventHandler(this.addEmployee_updateBtn_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(157)))), ((int)(((byte)(164)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(300, 162);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(113, 37);
+            this.button3.TabIndex = 14;
+            this.button3.Text = "Export";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel4.Location = new System.Drawing.Point(0, 299);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(839, 226);
+            this.panel4.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.leavsView);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(67, 22);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(604, 279);
+            this.panel1.TabIndex = 3;
             // 
             // leavsView
             // 
@@ -711,7 +717,7 @@
             this.leavsView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -722,8 +728,8 @@
             this.leavsView.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -759,23 +765,23 @@
             this.leavsView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.leavsView_CellContentClick);
             this.leavsView.SelectionChanged += new System.EventHandler(this.leavsView_SelectionChanged);
             // 
-            // button3
+            // label13
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(11)))), ((int)(((byte)(97)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(8)))), ((int)(((byte)(138)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(300, 162);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 37);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Export";
-            this.button3.UseVisualStyleBackColor = false;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(18, 21);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(115, 23);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Leave\'s Data";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Location = new System.Drawing.Point(0, 299);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(839, 226);
+            this.panel2.TabIndex = 1;
             // 
             // Leaves
             // 
@@ -840,7 +846,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label phone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button addEmployee_clearBtn;

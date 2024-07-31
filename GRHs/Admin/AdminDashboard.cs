@@ -49,5 +49,37 @@ namespace GRHs.Admin
         {
             AddUserControl(new Leaves());
         }
+
+        private void dashboard_btn_Click_1(object sender, EventArgs e)
+        {
+            AddUserControl(new Dashboard());
+        }
+
+        private void addEmployee_btn_Click_1(object sender, EventArgs e)
+        {
+            AddUserControl(new Employees());
+        }
+
+        private void salary_btn_Click_1(object sender, EventArgs e)
+        {
+            AddUserControl(new Certificates());
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            AddUserControl(new Leaves());
+        }
+
+        private void guna2GradientButton4_Click(object sender, EventArgs e)
+        {
+            AddUserControl(new Holidays());
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var login = new GRHs.authentication.login();
+            login.Show();
+        }
     }
 }

@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Windows.Forms;
 
 
@@ -262,10 +263,38 @@ namespace GRHs.Admin
                 return;
             }
 
+            var employeeDetails = _userAccount.DbContext.Employees
+                .Where(emp => emp.EmployeeID == employeeID)
+                .Select(emp => new
+                {
+                    EmployeeName = emp.User.Name,
+                    EmployeeEmail = emp.User.Email
+                })
+                .FirstOrDefault();
+
+            if (employeeDetails == null)
+            {
+                MessageBox.Show("Employee not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             bool isGenerated = GenerateAttestation();
             if (isGenerated)
             {
                 InsertAttestation(employeeID);
+
+                // Prepare email content
+                string subject = "Certification Generated - Immediate Action Required";
+                string body = $@"
+                    <p>Dear {employeeDetails.EmployeeName},</p>
+                    <p>We are pleased to inform you that your certification has been successfully generated.</p>
+                    <p>Please visit the Human Resources department as soon as possible to collect your certification and for any additional information you may need.</p>
+                    <p>If you have any questions or need further assistance, feel free to contact HR.</p>
+                    <br />
+                    ";
+
+                // Send email
+                EmailService.SendEmail(employeeDetails.EmployeeEmail, subject, body);
             }
 
         }

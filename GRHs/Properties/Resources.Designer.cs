@@ -61,12 +61,54 @@ namespace GRHs.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _14770514_les_cadres_touchent_la_structure_du_reseau_des_ressources_humaines_rh_gestion_efficace_et_recrutement_des_rh_structure_organisationnelle_efficace_formation_emploi_pratique_photo {
+            get {
+                object obj = ResourceManager.GetObject("14770514-les-cadres-touchent-la-structure-du-reseau-des-ressources-humaines-rh-ge" +
+                        "stion-efficace-et-recrutement-des-rh-structure-organisationnelle-efficace-format" +
+                        "ion-emploi-pratique-photo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] ATTESTATION_DE_TRAVAIL {
             get {
                 object obj = ResourceManager.GetObject("ATTESTATION_DE_TRAVAIL", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap campaign_creators_gMsnXqILjp4_unsplash {
+            get {
+                object obj = ResourceManager.GetObject("campaign-creators-gMsnXqILjp4-unsplash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download__1_ {
+            get {
+                object obj = ResourceManager.GetObject("download (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap download__2_ {
+            get {
+                object obj = ResourceManager.GetObject("download (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

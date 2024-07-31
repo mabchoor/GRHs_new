@@ -50,16 +50,16 @@
             this.StartTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.passwd = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.username = new System.Windows.Forms.TextBox();
+            this.login_showPass = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cpasswd = new System.Windows.Forms.TextBox();
-            this.login_showPass = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.passwd = new System.Windows.Forms.TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.username = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.addEmployee_picture)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
@@ -302,23 +302,34 @@
             this.guna2GroupBox1.TabIndex = 25;
             this.guna2GroupBox1.Text = "guna2GroupBox1";
             // 
-            // label9
+            // label11
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(30, 142);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 15);
-            this.label9.TabIndex = 22;
-            this.label9.Text = "Password:";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(34, 93);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 15);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "UserName:";
             // 
-            // passwd
+            // username
             // 
-            this.passwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwd.Location = new System.Drawing.Point(160, 130);
-            this.passwd.Name = "passwd";
-            this.passwd.Size = new System.Drawing.Size(152, 21);
-            this.passwd.TabIndex = 23;
+            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.username.Location = new System.Drawing.Point(160, 90);
+            this.username.Name = "username";
+            this.username.Size = new System.Drawing.Size(152, 21);
+            this.username.TabIndex = 28;
+            // 
+            // login_showPass
+            // 
+            this.login_showPass.AutoSize = true;
+            this.login_showPass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_showPass.Location = new System.Drawing.Point(200, 203);
+            this.login_showPass.Name = "login_showPass";
+            this.login_showPass.Size = new System.Drawing.Size(112, 18);
+            this.login_showPass.TabIndex = 26;
+            this.login_showPass.Text = "Show Password";
+            this.login_showPass.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -338,16 +349,23 @@
             this.cpasswd.Size = new System.Drawing.Size(152, 21);
             this.cpasswd.TabIndex = 25;
             // 
-            // login_showPass
+            // label9
             // 
-            this.login_showPass.AutoSize = true;
-            this.login_showPass.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_showPass.Location = new System.Drawing.Point(200, 203);
-            this.login_showPass.Name = "login_showPass";
-            this.login_showPass.Size = new System.Drawing.Size(112, 18);
-            this.login_showPass.TabIndex = 26;
-            this.login_showPass.Text = "Show Password";
-            this.login_showPass.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(30, 142);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 15);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "Password:";
+            // 
+            // passwd
+            // 
+            this.passwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwd.Location = new System.Drawing.Point(160, 130);
+            this.passwd.Name = "passwd";
+            this.passwd.Size = new System.Drawing.Size(152, 21);
+            this.passwd.TabIndex = 23;
             // 
             // guna2GroupBox2
             // 
@@ -391,24 +409,6 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(769, 44);
             this.guna2Panel1.TabIndex = 28;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(34, 93);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(42, 15);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Email:";
-            // 
-            // username
-            // 
-            this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.username.Location = new System.Drawing.Point(160, 90);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(152, 21);
-            this.username.TabIndex = 28;
             // 
             // Add_Employee
             // 
